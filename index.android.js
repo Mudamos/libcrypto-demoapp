@@ -49,8 +49,6 @@ class PowTest1 extends Component {
 
     var seed = LibCrypto.createSeedAndWallet('BRAZILIAN-PORTUGUESE', 'ExtraEntropy');
 
-    var wallet = LibCrypto.createWallet(seed.seed);
-
     var timeElapsed = (new Date() - startTime)/1000;
     
     var alertMessage = 'Seed: ' + seed.seed + '\n\nWallet: ' + seed.publicKey + '\n\n Tempo: ' + timeElapsed;
@@ -67,7 +65,7 @@ class PowTest1 extends Component {
     var startTime = new Date();
 
     var seed = LibCrypto.createSeedAndWallet('BRAZILIAN-PORTUGUESE', 'DeviceInfoForExtraEntropy');;
-    var message = 'Nome do usuario;Endereco do usuario;Titulo de Eleitor;' + startTime;
+    var message = 'Nome do usuario;Endereco do usuario;Titulo de Eleitor;Sat Dec 10 2016 02:41:02 GMT-0200 (BRST);Nome da Petição;PetiçãoID;' + startTime;
     var difficulty = parseInt(this.state.difficulty);
     var result =  LibCrypto.signMessage(seed.seed,message, difficulty);
 
